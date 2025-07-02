@@ -1,2 +1,2 @@
 # winona
-create a websute using docker
+create a website using docker
