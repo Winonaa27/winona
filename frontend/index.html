@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frontend to Backend Docker</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🌐 Simple Frontend</h1>
+    <p>Klik tombol di bawah ini untuk mengambil pesan dari Backend Flask!</p>
+    <button onclick="getMessage()">Get Message</button>
+    <p id="message" class="message-box"></p>
+  </div>
+
+  <script>
+    async function getMessage() {
+      try {
+        const response = await fetch('http://localhost:5000/api/message');
+        const data = await response.json();
+        document.getElementById('message').innerText = data.message;
+      } catch (error) {
+        document.getElementById('message').innerText = 'Error fetching data 😢';
+      }
+    }
+  </script>
+</body>
+</html>
