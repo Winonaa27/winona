@@ -1,2 +1,2 @@
 # winona
-create a website using docker
+Mid Exam - create a website using docker
